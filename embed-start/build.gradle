@@ -31,6 +31,7 @@ task buildJar(type: Jar) {
 }
 
 //Fat Jar 생성
+// jar안에는 jar를 포함하지 못해, jar안의 class파일들을 추출해 포함시킨다.
 task buildFatJar(type: Jar) {
     manifest {
         attributes 'Main-Class': 'hello.embed.EmbedTomcatSpringMain'
