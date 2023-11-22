@@ -1,3 +1,5 @@
 스프링 부트에서 재정의하는 실행 가능 Jar
 java -jar xxx.jar을 실행하게 되면, 우선 META-INF/MANIFEST.MF 파일을 찾음.
 거기에 있는 'Main-Class'를 읽어서 main() 메서드를 실행.
+Main-Class는 우리가 만든 xxxApplication.class가 아니라 JarLauncher.class라는 스프링부트의 클래스인데,
+이 클래스가 jar 내부의 jar를 읽어들이는 기능을 한다.
