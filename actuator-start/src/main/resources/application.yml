@@ -1,8 +1,36 @@
+# 노출 / 사용 전부 OK 이어야 endpoint 사용 가능.
 management:
+  server:
+    port: 8080
+#    port: 9292
+
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+
   endpoint:
     shutdown:
       enabled: true
+    health:
+      show-components: always   # 헬스 컴포넌트 상태 정보를 간략하게 제공
+  #      show-details: always   # 헬스 상태를 상세하게 제공
+
   endpoints:
     web:
       exposure:
         include: "*"
+      base-path: "/monitoring"  # 기본 경로 변경
+
+# info에 추가적인 정보를 노출시키고 싶으면, info.xxx 로 설정하면 된다.
+info:
+  app:
+    name: hello-actuator
+    company: hsc
+
+logging:
+  level:
+    hello.controller: debug
