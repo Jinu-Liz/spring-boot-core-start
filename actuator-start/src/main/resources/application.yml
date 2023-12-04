@@ -23,7 +23,7 @@ management:
     web:
       exposure:
         include: "*"
-      base-path: "/monitoring"  # 기본 경로 변경
+      base-path: "/actuator"  # 기본 경로 변경
 
 # info에 추가적인 정보를 노출시키고 싶으면, info.xxx 로 설정하면 된다.
 info:
